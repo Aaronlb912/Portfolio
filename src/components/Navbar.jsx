@@ -4,13 +4,22 @@ import {
   FaTimes,
   FaGithub,
   FaLinkedin,
+<<<<<<< HEAD
+=======
+  FaFacebook,
+  FaLinkedinIn,
+>>>>>>> 936f611bea09b4c69f9b19732de16c4923b4e609
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Logo from "../assets/logo.png";
 import { Link } from "react-scroll";
 
+<<<<<<< HEAD
 import CV from "../assets/front_end_resume.pdf";
+=======
+import CV from "../assets/SoftwareEngineerCV.pdf";
+>>>>>>> 936f611bea09b4c69f9b19732de16c4923b4e609
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -19,7 +28,11 @@ const Navbar = () => {
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
       <div>
+<<<<<<< HEAD
         <img src={Logo} alt="Logo" style={{ width: "200px" }} />
+=======
+        <img src={Logo} alt="Logo Image" style={{ width: "200px" }} />
+>>>>>>> 936f611bea09b4c69f9b19732de16c4923b4e609
       </div>
 
       {/* menu */}
