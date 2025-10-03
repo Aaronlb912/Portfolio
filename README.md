@@ -4,19 +4,19 @@ Hello\! Thanks for checking out the codebase for my personal portfolio. This pro
 
 This README provides a quick guide to getting this project up and running locally.
 
------
+---
 
 ## 🚀 Built With
 
 This project was initially bootstrapped with **Create React App (CRA)**, giving it a solid foundation for rapid development and optimization.
 
-| Technology | Purpose |
-| :--- | :--- |
-| **React** | Core framework for building the user interface. |
-| **Tailwind CSS** | Utility-first CSS framework for fast, responsive styling (based on component classes used in the source code). |
-| **JavaScript (ES6+)** | The primary programming language. |
+| Technology            | Purpose                                                                                                        |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------- |
+| **React**             | Core framework for building the user interface.                                                                |
+| **Tailwind CSS**      | Utility-first CSS framework for fast, responsive styling (based on component classes used in the source code). |
+| **JavaScript (ES6+)** | The primary programming language.                                                                              |
 
------
+---
 
 ## 💻 Getting Started
 
@@ -63,19 +63,19 @@ This command bundles React, optimizes the code, and creates the finalized, high-
 
 For advanced development or testing, the standard Create React App commands are also available:
 
-  * **`npm test`**: Launches the test runner.
-  * **`npm run eject`**: **(Use with Extreme Caution\!)** This is a permanent, one-way operation that gives you full, manual control over the webpack and Babel configurations.
+- **`npm test`**: Launches the test runner.
+- **`npm run eject`**: **(Use with Extreme Caution\!)** This is a permanent, one-way operation that gives you full, manual control over the webpack and Babel configurations.
 
------
+---
 
 ## 📚 Learn More
 
 If you'd like to dive deeper into the technologies used, here are some helpful resources:
 
-  * **React Documentation**
-  * **Create React App Documentation**
-  * **Tailwind CSS Documentation** (Highly recommended for understanding the styling)
+- **React Documentation**
+- **Create React App Documentation**
+- **Tailwind CSS Documentation** (Highly recommended for understanding the styling)
 
------
+---
 
 Happy coding\! Feel free to reach out if you have any questions about the project or the technologies used.

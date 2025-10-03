@@ -10,14 +10,25 @@ const Home = () => {
     <div name="home" className="w-full h-screen bg-[#0a192f]">
       {/* Container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
+<<<<<<< HEAD
+=======
+        <p className="text-[#ea3c12]">Hi, my name is</p>
+>>>>>>> 936f611bea09b4c69f9b19732de16c4923b4e609
         <h1 className="text-4xl sm:text-7xl font-bold text-[#ccd6f6]">
           AARON BRYANT
         </h1>
         <h2 className="text-4xl sm:text-7xl font-bold text-[#8892b0]">
+<<<<<<< HEAD
           Front-End Engineer.
         </h2>
         <p className="text-[#8892b0] py-4 max-w-[700px]">
           I am a front-end engineer specializing in building (and occasionally
+=======
+          I'm a Software Engineer.
+        </h2>
+        <p className="text-[#8892b0] py-4 max-w-[700px]">
+          I’m a software engineer specializing in building (and occasionally
+>>>>>>> 936f611bea09b4c69f9b19732de16c4923b4e609
           designing) exceptional digital experiences. Currently, I’m focused on
           building responsive full-stack web applications.
         </p>
