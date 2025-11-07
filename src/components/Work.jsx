@@ -21,12 +21,15 @@ const Work = ({ className }) => {
         <div className="grid sm:grid-cols-1 gap-8">
           {/* Grid Item */}
           {project.map((item, index) => (
-            <div key={index} className="grid md:grid-cols-2 gap-4 items-start">
+            <div
+              key={index}
+              className="grid md:grid-cols-2 gap-4 items-start group hover:scale-[1.02] transition-transform duration-300"
+            >
               {/* Left Column: Static Image */}
               <div
-                className="shadow-lg shadow-[#040c16] bg-[#162d4e] rounded-md 
+                className="shadow-xl shadow-[#040c16] bg-gradient-to-br from-[#162d4e] to-[#1a3a5e] rounded-lg 
              flex justify-center items-center mx-auto content-div 
-             h-80 w-full bg-contain bg-center bg-no-repeat"
+             h-80 w-full bg-contain bg-center bg-no-repeat border border-[#2a4a6e] hover:border-[#ea3c12] transition-colors duration-300"
               >
                 {" "}
                 <img
@@ -36,28 +39,28 @@ const Work = ({ className }) => {
                     item.name === "Pasteproof"
                       ? "max-w-[128px] max-h-[128px]"
                       : "w-full h-full"
-                  } object-contain p-4`}
+                  } object-contain p-4 transition-transform duration-300 group-hover:scale-105`}
                 />
               </div>
 
               {/* Right Column: Description Box */}
-              <div className="p-6 rounded-md bg-gray-200 shadow-md h-full">
-                <h2 className="text-2xl font-semibold mb-3 border-b border-gray-400 pb-2 text-gray-800">
+              <div className="p-6 rounded-lg bg-gradient-to-br from-[#fefcf9] to-[#f5f1eb] shadow-xl border border-[#e8ddd4] h-full hover:shadow-2xl transition-shadow duration-300">
+                <h2 className="text-2xl font-semibold mb-3 border-b-2 border-[#ea3c12] pb-2 text-gray-800">
                   {item.url ? (
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-600 visited:text-blue-600 font-bold no-underline hover:no-underline"
+                      className="text-[#1e40af] hover:text-[#ea3c12] visited:text-[#1e40af] font-bold no-underline hover:no-underline transition-colors duration-200"
                     >
                       {item.name}
                     </a>
                   ) : (
-                    item.name
+                    <span className="text-gray-800">{item.name}</span>
                   )}
                 </h2>
 
-                <p className="text-base text-gray-800">
+                <p className="text-base text-gray-800 leading-relaxed">
                   {item.description
                     ? item.description.split("\n").map((line, lineIndex) => (
                         <React.Fragment key={lineIndex}>
