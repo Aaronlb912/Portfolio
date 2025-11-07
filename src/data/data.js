@@ -1,26 +1,38 @@
-import freddie_mac from '../assets/FreddieMacLogo.svg'
-import jasaron from '../assets/jasaron_learning.png'
-import ibm from '../assets/IBM_logo.svg'
+import pasteproof from "../assets/pasteproof-128.png";
+import freddie_mac from "../assets/FreddieMacLogo.svg";
+import jasaron from "../assets/jasaron_learning.png";
+import ibm from "../assets/IBM_logo.svg";
 
-export const data=[
-    {
-        id:1,
-        name:"Freddie Mac",
-        image:freddie_mac,
-        description: "● Commanded the full content pipeline, strategically deploying dynamic assets and ensuring seamless integration within the Drupal architecture to drive a cohesive and compelling user narrative\n● Fortified the stability and integrity of Freddie Mac's mission-critical web ecosystem, executing flawless content updates and proactive maintenance to ensure 100% uptime and operational excellence\n● Spearheaded the technical execution of a complex platform migration, architecting a new front-end experience from legacy systems while rigorously adhering to Freddie Mac design principles"
-    },
-    {
-        id: 2,
-        name: "Jasaron Learning Website",
-        image: jasaron,
-        description: "● Built customized website layout/user interfaces by using standard HTML/CSS practices\n● Maintained websites required by the client and modified websites from layout to function\n● Researched current market trends to increase business"
-    },
-    {
-        id:3,
-        name:"IBM",
-        image:ibm,
-        description:"● Enhanced Drupal's Search query capabilities by including Component searches and reviewed Drupal\nSearch modules to add a Component parameter, facilitating more nuanced searches\n● Addressed customer-reported search issues by developing a script that compared published Drupal\ncontent against the Enterprise Search index, identifying and resolving discrepancies by either removing\nbroken links or repushing unindexed content\n● Managed Drupal sitemaps and automated Google Search updates using Google Search Console; also\nbecame adept at debugging Drupal sitemap issues"
-    },
-
-
-]
+export const data = [
+  {
+    id: 1,
+    name: "Pasteproof",
+    image: pasteproof,
+    url: "https://pasteproof.com",
+    description:
+      "● Developed a full-stack web application with modern React frontend and robust backend architecture\n● Implemented secure user authentication and data management systems\n● Created responsive UI/UX design ensuring optimal user experience across all devices",
+  },
+  {
+    id: 2,
+    name: "Freddie Mac",
+    image: freddie_mac,
+    url: "https://sf.freddiemac.com",
+    description:
+      "● Maintained and stabilized a mission-critical web ecosystem through proactive maintenance and complex content deployments, successfully achieving and sustaining 100% platform uptime\n● Led the technical execution of a complex platform migration, architecting a new front-end experience from legacy systems and strictly ensuring compliance with internal Freddie Mac design principles\n● Managed the end-to-end content deployment pipeline, integrating dynamic assets within the Drupal architecture to ensure content freshness and seamless user narrative",
+  },
+  {
+    id: 3,
+    name: "Jasaron Learning Institute (discontinued)",
+    image: jasaron,
+    description:
+      "● Developed and deployed customized, responsive user interfaces using standard HTML5/CSS practices to align with client educational goals\n● Managed all aspects of client website maintenance, encompassing front-end layout modifications, back-end functionality, and performance optimization\n● Leveraged market research and UX/UI practices to enhance site usability",
+  },
+  {
+    id: 4,
+    name: "IBM",
+    image: ibm,
+    url: "https://www.ibm.com/support/pages/ibmsearch",
+    description:
+      "● Developed diagnostic script to reconcile published Drupal content\n● Engineered search query capabilities in Drupal by introducing a component parameter, facilitating more nuanced and targeted content discovery for end-users",
+  },
+];

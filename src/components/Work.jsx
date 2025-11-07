@@ -32,14 +32,29 @@ const Work = ({ className }) => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain p-4"
+                  className={`${
+                    item.name === "Pasteproof"
+                      ? "max-w-[128px] max-h-[128px]"
+                      : "w-full h-full"
+                  } object-contain p-4`}
                 />
               </div>
 
               {/* Right Column: Description Box */}
               <div className="p-6 rounded-md bg-gray-200 shadow-md h-full">
                 <h2 className="text-2xl font-semibold mb-3 border-b border-gray-400 pb-2 text-gray-800">
-                  {item.name}
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-600 visited:text-blue-600 font-bold no-underline hover:no-underline"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    item.name
+                  )}
                 </h2>
 
                 <p className="text-base text-gray-800">
