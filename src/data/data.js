@@ -10,7 +10,7 @@ export const data = [
     image: null,
     alt: "AniThrift placeholder logo",
     placeholderLabel: "AniThrift",
-    url: "https://github.com/Aaronlb912/AniThrift",
+    url: "https://anithrift.netlify.app/",
     description:
       "● Passion project blending anime fandom with sustainable resale, architected end-to-end in TypeScript\n● Integrated Stripe checkout, Firebase-authenticated messaging, and Firestore-backed chat threads to connect buyers & sellers\n● Designed listing workflows so community members can publish, manage, and fulfill their own product inventory alongside eBay-sourced catalog items",
   },
