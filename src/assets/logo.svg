@@ -1,0 +1,27 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="abGradient" x1="16" y1="7" x2="204" y2="53" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6A9AE6"/>
+      <stop offset="1" stop-color="#7FB6F4"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="219" height="59" rx="16" fill="#FFFFFF" stroke="#E6EAF2"/>
+  <circle cx="43" cy="30" r="26" fill="url(#abGradient)"/>
+  <text
+    x="43"
+    y="38"
+    font-family="'Poppins','Segoe UI',sans-serif"
+    font-size="26"
+    font-weight="700"
+    letter-spacing="2"
+    text-anchor="middle"
+    fill="#FFFFFF"
+  >
+    AB
+  </text>
+  <g font-family="'Poppins','Segoe UI',sans-serif" fill="#1F2937">
+    <text x="88" y="30" font-size="19" font-weight="600" letter-spacing="6">AARON</text>
+    <text x="88" y="45" font-size="16" font-weight="400" letter-spacing="5">BRYANT</text>
+  </g>
+</svg>
+

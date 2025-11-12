@@ -12,81 +12,55 @@ import PHP from "../assets/php.png";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full h-screen bg-[#0a192f] text-gray-300">
+    <div
+      name="skills"
+      className="w-full bg-gradient-to-b from-white via-[#f4f4f2] to-[#eceee9] text-slate-700 py-24"
+    >
       {/* Container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-        <div>
-          <p className="text-4xl font-bold inline border-b-4 border-[#ea3c12] ">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center">
+        <div className="text-center">
+          <p className="text-sm uppercase tracking-[0.4em] text-[var(--color-muted)]">
             Skills
           </p>
-          <p className="py-4">// These are the technologies I've worked with</p>
+          <h2 className="mt-4 text-4xl font-semibold text-slate-900">
+            Tools I use to craft memorable interfaces
+          </h2>
+          <p className="mt-4 text-base text-slate-600">
+            From foundational web technologies to the frameworks powering modern
+            products.
+          </p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8">
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg" alt="Drupal icon" />
-            <p className="my-4">DRUPAL 10</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={PHP} alt="PHP icon" />
-            <p className="my-4">PHP</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={HTML} alt="HTML icon" />
-            <p className="my-4">HTML5</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={CSS} alt="CSS icon" />
-            <p className="my-4">CSS3</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={JavaScript} alt="JavaScript icon" />
-            <p className="my-4">JAVASCRIPT (ES6+)</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={ReactImg} alt="React icon" />
-            <p className="my-4">REACTJS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js icon" />
-            <p className="my-4">NEXT.JS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma icon" />
-            <p className="my-4">FIGMA</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={GitHub} alt="Git icon" />
-            <p className="my-4">GIT</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Node} alt="Node.js icon" />
-            <p className="my-4">NODE JS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL icon" />
-            <p className="my-4">MYSQL</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={Tailwind} alt="Tailwind icon" />
-            <p className="my-4">TAILWIND</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={FireBase} alt="Firebase icon" />
-            <p className="my-4">FIREBASE</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux icon" />
-            <p className="my-4">LINUX</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress icon" />
-            <p className="my-4">WORDPRESS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circleci/circleci-plain.svg" alt="CI/CD icon" />
-            <p className="my-4">CI/CD</p>
-          </div>
+        <div className="mt-12 w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          {[
+            { label: "DRUPAL 10", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg" },
+            { label: "PHP", src: PHP },
+            { label: "HTML5", src: HTML },
+            { label: "CSS3", src: CSS },
+            { label: "JAVASCRIPT (ES6+)", src: JavaScript },
+          { label: "TYPESCRIPT", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+            { label: "REACT", src: ReactImg },
+            { label: "NEXT.JS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+            { label: "FIGMA", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+            { label: "GIT", src: GitHub },
+            { label: "NODE.JS", src: Node },
+            { label: "MYSQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { label: "TAILWIND", src: Tailwind },
+            { label: "FIREBASE", src: FireBase },
+            { label: "LINUX", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+            { label: "WORDPRESS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+            { label: "CI/CD", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circleci/circleci-plain.svg" },
+          ].map(({ label, src }) => (
+            <div
+              key={label}
+              className="group rounded-2xl border border-white/70 bg-white/90 px-6 py-8 shadow-sm shadow-slate-200 transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+            >
+              <img className="w-16 h-16 mx-auto object-contain" src={src} alt={`${label} icon`} />
+              <p className="mt-6 text-sm font-semibold tracking-wide text-slate-600 group-hover:text-[#6a9ae6]">
+                {label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

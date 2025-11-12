@@ -27,6 +27,7 @@ export const data = [
     name: "Freddie Mac",
     image: freddie_mac,
     url: "https://sf.freddiemac.com",
+    embedPreview: false,
     description:
       "● Maintained and stabilized a mission-critical web ecosystem through proactive maintenance and complex content deployments, successfully achieving and sustaining 100% platform uptime\n● Led the technical execution of a complex platform migration, architecting a new front-end experience from legacy systems and strictly ensuring compliance with internal Freddie Mac design principles\n● Managed the end-to-end content deployment pipeline, integrating dynamic assets within the Drupal architecture to ensure content freshness and seamless user narrative",
   },
