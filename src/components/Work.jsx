@@ -36,8 +36,9 @@ const Work = ({ className }) => {
                 <iframe
                   src={item.url}
                   title={`${item.name} live preview`}
-                  className="absolute inset-0 h-full w-full border-0"
+                  className="absolute inset-0 h-full w-full border-0 pointer-events-none overflow-hidden"
                   loading="lazy"
+                  scrolling="no"
                   allow="fullscreen"
                   referrerPolicy="no-referrer"
                 ></iframe>
