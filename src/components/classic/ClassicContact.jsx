@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiArrowNarrowRight, HiOutlineMail } from "react-icons/hi";
-import { contactMailto, CONTACT_EMAIL } from "../../data/data.js";
+import { contactMailto } from "../../data/data.js";
 
 const ClassicContact = () => {
   const [step, setStep] = useState(1);
@@ -139,7 +139,7 @@ const ClassicContact = () => {
               <FaLinkedin /> LinkedIn
             </a>
             <a href={contactMailto} className="contact-link">
-              <HiOutlineMail /> {CONTACT_EMAIL}
+              <HiOutlineMail /> Email
             </a>
             <a
               href="https://github.com/Aaronlb912"

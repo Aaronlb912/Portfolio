@@ -353,11 +353,11 @@ html[data-portfolio="retro"] .portfolio-switch-track {
   @apply absolute top-0.5 h-4 w-4 rounded-full bg-[var(--color-accent)] transition-transform duration-200;
 }
 
-.portfolio-switch-thumb.is-retro {
+.portfolio-switch-thumb.is-classic {
   @apply left-0.5;
 }
 
-.portfolio-switch-thumb.is-classic {
+.portfolio-switch-thumb.is-retro {
   @apply left-[18px];
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { contactMailto, CONTACT_EMAIL } from "../data/data.js";
+import { contactMailto } from "../data/data.js";
 
 const Contact = () => {
   const [step, setStep] = useState(1);
@@ -139,7 +139,7 @@ const Contact = () => {
                   href={contactMailto}
                   className="flex items-center gap-2 text-xl text-[var(--color-muted)] hover:text-[var(--color-accent)]"
                 >
-                  <HiOutlineMail /> {CONTACT_EMAIL}
+                  <HiOutlineMail /> Email
                 </a>
                 <a
                   href="https://github.com/Aaronlb912"

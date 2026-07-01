@@ -13,7 +13,7 @@ const ClassicHomePage = () => {
       <section className="relative overflow-hidden px-6 pb-10 pt-4 sm:px-8 md:pb-16">
         <div className="blob -top-32 -left-32 h-[500px] w-[500px] bg-[#6a9ae6]/20" />
         <div className="blob top-1/4 -right-32 h-[400px] w-[400px] bg-[#8fb6d3]/25" />
-        <div className="blob-shape -left-[7%] top-1/2 hidden h-[90%] w-[58%] -translate-y-1/2 text-[#d4c4f0] opacity-20 lg:block" />
+        <div className="blob-shape -left-[5%] top-[48%] hidden h-[90%] w-[58%] -translate-y-1/2 text-[#d4c4f0] opacity-20 lg:block" />
 
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
           <div className="text-center lg:text-left">
