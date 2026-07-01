@@ -270,12 +270,17 @@ html[data-portfolio="classic"] .nav-pill {
   @apply rounded-full bg-[var(--color-dark)] shadow-lg shadow-black/10;
 }
 
+html[data-portfolio="classic"] .nav-mobile-menu {
+  @apply rounded-lg bg-[var(--color-dark)] shadow-lg shadow-black/10;
+}
+
 html[data-portfolio="classic"] .classic-nav {
   @apply pointer-events-none;
 }
 
 html[data-portfolio="classic"] .classic-nav nav,
-html[data-portfolio="classic"] .classic-nav .nav-pill {
+html[data-portfolio="classic"] .classic-nav .nav-pill,
+html[data-portfolio="classic"] .classic-nav .nav-mobile-menu {
   @apply pointer-events-auto;
 }
 

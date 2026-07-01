@@ -57,7 +57,7 @@ const ClassicNavbar = () => {
       </nav>
 
       {nav && (
-        <div className="nav-pill mx-auto mt-2 max-w-5xl px-4 py-4 text-right md:hidden">
+        <div className="nav-mobile-menu mx-auto mt-2 max-w-5xl px-4 py-4 text-right md:hidden">
           <Link to="/" onClick={handleClick} className="block py-2 text-base text-white/90">
             Home
           </Link>
