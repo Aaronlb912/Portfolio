@@ -265,7 +265,6 @@
   background-size: 40px 40px;
 }
 
-/* Classic portfolio */
 html[data-portfolio="classic"] .nav-pill {
   @apply rounded-full bg-[var(--color-dark)] shadow-lg shadow-black/10;
 }
@@ -326,7 +325,6 @@ html[data-portfolio="classic"] .classic-input {
   @apply w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-accent)];
 }
 
-/* Portfolio mode switch */
 .portfolio-switch {
   @apply inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide transition-colors;
 }

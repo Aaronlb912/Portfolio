@@ -16,7 +16,6 @@ const Cartridge = ({ project, isSelected, isInserted, onSelect }) => {
           height: "110px",
         }}
       >
-        {/* Label sticker */}
         <div className="mx-2 mt-2 rounded-sm border border-white/30 bg-white/90 px-1 py-2 text-center shadow-sm">
           {project.image ? (
             <img
@@ -33,11 +32,9 @@ const Cartridge = ({ project, isSelected, isInserted, onSelect }) => {
         <p className="mt-1 px-1 text-center text-sm leading-tight text-white drop-shadow">
           {project.name}
         </p>
-        {/* Ridge lines */}
         <div className="absolute bottom-8 left-0 right-0 h-px bg-black/20" />
         <div className="absolute bottom-10 left-0 right-0 h-px bg-white/10" />
       </div>
-      {/* Gold contacts */}
       <div className="flex justify-center gap-[2px] rounded-b bg-[#c9a227] px-1 py-1">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="h-3 w-[3px] rounded-sm bg-[#e8c547]" />
@@ -336,10 +333,8 @@ const GameRoom = () => {
           case study, page screenshots, or visit the live site.
         </p>
 
-        {/* TV */}
         <div className="mt-12">
           <div className="tv-bezel mx-auto max-w-4xl rounded-2xl p-3 sm:p-5">
-            {/* TV top badge */}
             <div className="mb-2 flex items-center justify-between px-2">
               <span className="text-base text-[var(--color-muted)]">
                 BRYANT-TV
@@ -365,17 +360,14 @@ const GameRoom = () => {
               </div>
             </div>
 
-            {/* TV stand */}
             <div className="mx-auto mt-3 h-3 w-32 rounded-b-lg bg-[#30363d]" />
             <div className="mx-auto h-2 w-48 rounded-b-xl bg-[#21262d]" />
           </div>
         </div>
 
-        {/* Console */}
         <div className="mx-auto mt-10 max-w-2xl">
           <div className="console-body rounded-2xl border border-[#484f58] p-5 sm:p-6">
             <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-              {/* Cartridge slot */}
               <div className="flex flex-col items-center">
                 <div
                   className={`relative w-20 rounded-b-lg border-2 border-[#484f58] bg-[#0d1117] transition-all duration-300 ${selectedProject && !isLoading ? "h-16 shadow-[inset_0_0_20px_rgba(106,154,230,0.3)]" : "h-12"}`}
@@ -402,7 +394,6 @@ const GameRoom = () => {
                 </span>
               </div>
 
-              {/* Controls */}
               <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center gap-3">
                   <button
@@ -440,7 +431,6 @@ const GameRoom = () => {
                 </div>
               </div>
 
-              {/* Brand */}
               <div className="hidden sm:block text-right">
                 <p className="text-xl text-[var(--color-accent)]">
                   BRYANT
@@ -456,7 +446,6 @@ const GameRoom = () => {
           </div>
         </div>
 
-        {/* Cartridge shelf */}
         <div className="mt-10">
           <p className="section-label text-center">game shelf</p>
           <div className="mt-4 rounded-xl border-2 border-[#30363d] bg-[var(--color-bg-panel)] p-4 sm:p-6">
