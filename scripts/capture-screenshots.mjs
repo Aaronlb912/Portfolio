@@ -105,11 +105,11 @@ const sites = [
   {
     slug: "anithrift",
     shots: [
-      { name: "01-home", url: "https://anithrift.netlify.app/" },
-      { name: "02-sell", url: "https://anithrift.netlify.app/listing" },
-      { name: "03-signin", url: "https://anithrift.netlify.app/signin" },
-      { name: "04-about", url: "https://anithrift.netlify.app/about-us" },
-      { name: "05-forum", url: "https://anithrift.netlify.app/forum" },
+      { name: "01-home", url: "https://www.anithrift.com/" },
+      { name: "02-sell", url: "https://www.anithrift.com/listing" },
+      { name: "03-signin", url: "https://www.anithrift.com/auth/login" },
+      { name: "04-about", url: "https://www.anithrift.com/search" },
+      { name: "05-forum", url: "https://www.anithrift.com/category/figures" },
     ],
   },
 ];

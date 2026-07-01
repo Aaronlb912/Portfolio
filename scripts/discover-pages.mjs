@@ -3,7 +3,7 @@ import { chromium } from "playwright";
 const sites = [
   "https://pasteproof.com",
   "https://civicshq.com",
-  "https://anithrift.netlify.app/",
+  "https://www.anithrift.com/",
   "https://sf.freddiemac.com",
   "https://www.ibm.com/support/pages/ibmsearch",
   "https://www.jasaronlearninginstitute.com/",
