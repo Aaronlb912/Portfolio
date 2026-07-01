@@ -26,13 +26,13 @@ const sites = [
     ],
   },
   {
-    slug: "anithrift",
+    slug: "civicshq",
     shots: [
-      { name: "01-home", url: "https://anithrift.netlify.app/" },
-      { name: "02-sell", url: "https://anithrift.netlify.app/listing" },
-      { name: "03-signin", url: "https://anithrift.netlify.app/signin" },
-      { name: "04-about", url: "https://anithrift.netlify.app/about-us" },
-      { name: "05-forum", url: "https://anithrift.netlify.app/forum" },
+      { name: "01-home", url: "https://civicshq.com/" },
+      { name: "02-bills", url: "https://civicshq.com/bills" },
+      { name: "03-politicians", url: "https://civicshq.com/politicians" },
+      { name: "04-my-district", url: "https://civicshq.com/my-district" },
+      { name: "05-match", url: "https://civicshq.com/match" },
     ],
   },
   {
@@ -100,6 +100,16 @@ const sites = [
         name: "05-contact",
         url: `${WAYBACK}/https://www.jasaronlearninginstitute.com/contact-us`,
       },
+    ],
+  },
+  {
+    slug: "anithrift",
+    shots: [
+      { name: "01-home", url: "https://anithrift.netlify.app/" },
+      { name: "02-sell", url: "https://anithrift.netlify.app/listing" },
+      { name: "03-signin", url: "https://anithrift.netlify.app/signin" },
+      { name: "04-about", url: "https://anithrift.netlify.app/about-us" },
+      { name: "05-forum", url: "https://anithrift.netlify.app/forum" },
     ],
   },
 ];

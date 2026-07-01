@@ -1,8 +1,16 @@
+import civicshq from "../assets/civicshq.png";
 import pasteproof from "../assets/pasteproof-128.png";
 import freddie_mac_logo from "../assets/FreddieMacLogo.svg";
 import jasaron from "../assets/jasaron_learning.png";
 import ibm_logo from "../assets/IBM_logo.svg";
 
+import civicshq_01 from "../assets/screenshots/civicshq/01-home.png";
+import civicshq_02 from "../assets/screenshots/civicshq/02-bills.png";
+import civicshq_03 from "../assets/screenshots/civicshq/03-politicians.png";
+import civicshq_04 from "../assets/screenshots/civicshq/04-my-district.png";
+import civicshq_05 from "../assets/screenshots/civicshq/05-match.png";
+
+import anithrift from "../assets/anithrift.png";
 import anithrift_01 from "../assets/screenshots/anithrift/01-home.png";
 import anithrift_02 from "../assets/screenshots/anithrift/02-sell.png";
 import anithrift_03 from "../assets/screenshots/anithrift/03-signin.png";
@@ -158,29 +166,31 @@ export const techStack = [
 export const data = [
   {
     id: 1,
-    name: "AniThrift",
-    slug: "anithrift",
-    shortCode: "ATHF",
-    category: "E-Commerce",
-    image: null,
-    url: "https://anithrift.netlify.app/",
-    color: "#c44dff",
-    labelColor: "#ff6bcb",
-    tags: ["TypeScript", "Stripe", "Firebase"],
+    name: "CivicHQ",
+    slug: "civicshq",
+    shortCode: "CVHQ",
+    category: "Civic Tech",
+    image: civicshq,
+    url: "https://civicshq.com",
+    github: "https://github.com/abryantdev/CivicsHQ",
+    live: true,
+    color: "#1a5c45",
+    labelColor: "#2d8a66",
+    tags: ["Next.js", "TypeScript", "Civic Data"],
     screenshots: [
-      { src: anithrift_01, alt: "Homepage" },
-      { src: anithrift_02, alt: "Create listing" },
-      { src: anithrift_03, alt: "Sign in" },
-      { src: anithrift_04, alt: "About us" },
-      { src: anithrift_05, alt: "Community forum" },
+      { src: civicshq_01, alt: "Civic dashboard" },
+      { src: civicshq_02, alt: "Legislation feed" },
+      { src: civicshq_03, alt: "Politician lookup" },
+      { src: civicshq_04, alt: "District lookup" },
+      { src: civicshq_05, alt: "Match score" },
     ],
     highlights: [
-      "Stripe checkout and Firebase-authenticated messaging",
-      "Firestore-backed chat threads for buyers and sellers",
-      "Listing workflows for community-driven inventory",
+      "Federal and state legislative tracker with AI summaries",
+      "Politician profiles and district lookup by address or ZIP",
+      "Match score tool to compare your views with representatives",
     ],
     description:
-      "Passion project blending anime fandom with sustainable resale. Stripe checkout, Firebase auth, and Firestore messaging connect buyers and sellers.",
+      "Public utility platform for civic engagement. Track 8,000+ active bills, browse politician profiles, look up your district, and explore legislative match scores — no account required.",
   },
   {
     id: 2,
@@ -284,6 +294,32 @@ export const data = [
     ],
     description:
       "Diagnostic scripts for Drupal content reconciliation and advanced search query capabilities.",
+  },
+  {
+    id: 6,
+    name: "AniThrift",
+    slug: "anithrift",
+    shortCode: "ATHF",
+    category: "E-Commerce",
+    image: anithrift,
+    url: "https://anithrift.netlify.app/",
+    color: "#c44dff",
+    labelColor: "#ff6bcb",
+    tags: ["TypeScript", "Stripe", "Firebase"],
+    screenshots: [
+      { src: anithrift_01, alt: "Homepage" },
+      { src: anithrift_02, alt: "Create listing" },
+      { src: anithrift_03, alt: "Sign in" },
+      { src: anithrift_04, alt: "About us" },
+      { src: anithrift_05, alt: "Community forum" },
+    ],
+    highlights: [
+      "Stripe checkout and Firebase-authenticated messaging",
+      "Firestore-backed chat threads for buyers and sellers",
+      "Listing workflows for community-driven inventory",
+    ],
+    description:
+      "Passion project blending anime fandom with sustainable resale. Stripe checkout, Firebase auth, and Firestore messaging connect buyers and sellers.",
   },
 ];
 

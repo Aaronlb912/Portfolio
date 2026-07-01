@@ -2,6 +2,7 @@ import { chromium } from "playwright";
 
 const sites = [
   "https://pasteproof.com",
+  "https://civicshq.com",
   "https://anithrift.netlify.app/",
   "https://sf.freddiemac.com",
   "https://www.ibm.com/support/pages/ibmsearch",
