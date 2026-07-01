@@ -1,50 +1,85 @@
-import React, { useState } from "react";
+import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
+import { techStack } from "../data/data.js";
+
+const pillPositions = [
+  "top-[8%] left-[10%]",
+  "top-[5%] right-[5%]",
+  "top-[35%] left-[0%]",
+  "top-[30%] right-[0%]",
+  "bottom-[30%] left-[5%]",
+  "bottom-[25%] right-[10%]",
+  "bottom-[8%] left-[20%]",
+  "bottom-[5%] right-[20%]",
+];
 
 const Home = () => {
-  const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
-
   return (
     <div
       name="home"
-      className="relative w-full min-h-screen bg-gradient-to-b from-[var(--color-background)] via-white to-[#eef1f4]"
+      className="relative overflow-hidden pt-28 pb-10 sm:pb-12"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -right-16 w-72 h-72 bg-[#6a9ae6]/14 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 left-8 w-80 h-80 bg-[#8fb6d3]/14 blur-3xl rounded-full" />
-      </div>
-      {/* Container */}
-      <div className="relative max-w-5xl mx-auto px-8 sm:px-10 flex flex-col justify-center min-h-screen py-24">
-        <span className="uppercase tracking-[0.35em] text-xs sm:text-sm text-[var(--color-muted)]">
-          Front-End Engineer
-        </span>
-        <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight">
-          Aaron Bryant
-        </h1>
-        <p className="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl">
-          I create thoughtful, responsive interfaces with clean code and
-          seamless user flows. My focus is designing digital experiences that
-          feel intuitive, inclusive, and genuinely helpful.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-            <button className="group relative overflow-hidden rounded-full px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#6a9ae6]/25 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-[#6a9ae6]/40">
-              <span className="absolute inset-0 bg-gradient-to-r from-[#6a9ae6] via-[#5f8fd6] to-[#7fb6f4] transition-transform duration-300 group-hover:scale-110" />
-              <span className="relative flex items-center justify-center gap-2">
-                View Work
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
+      <div className="blob -top-32 -left-32 h-[500px] w-[500px] bg-[#6a9ae6]/20" />
+      <div className="blob top-1/4 -right-32 h-[400px] w-[400px] bg-[#8fb6d3]/25" />
+      <div className="blob bottom-0 left-1/4 h-[350px] w-[350px] bg-[#dbe5f9]/40" />
+
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
+          <div>
+            <h1 className="text-5xl font-bold leading-tight tracking-tight text-[var(--color-text)] sm:text-6xl lg:text-7xl">
+              Aaron Bryant
+            </h1>
+            <p className="mt-6 text-xl font-medium text-[var(--color-text)] sm:text-2xl">
+              Building thoughtful interfaces from idea to launch.
+            </p>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+              I create responsive, accessible web experiences with clean code and
+              seamless user flows - from marketing sites to product dashboards,
+              with a focus on design and performance.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-5">
+              <Link to="contact" smooth={true} duration={500}>
+                <button className="btn-primary">
+                  Get in touch
                   <HiArrowNarrowRight className="text-lg" />
-                </span>
-              </span>
-            </button>
-          </Link>
-          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-            <button className="rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold tracking-wide text-slate-700 shadow-sm transition-all duration-300 hover:border-[#6a9ae6] hover:text-[#6a9ae6] focus:outline-none focus:ring-4 focus:ring-[#6a9ae6]/30">
-              Get in Touch
-            </button>
-          </Link>
+                </button>
+              </Link>
+              <Link to="work" smooth={true} duration={500}>
+                <button className="btn-secondary">See my work</button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative hidden h-[420px] lg:block">
+            {techStack.map((tech, index) => (
+              <div
+                key={tech.name}
+                className={`tech-pill absolute ${pillPositions[index]} animate-[float_6s_ease-in-out_infinite]`}
+                style={{ animationDelay: `${index * 0.4}s` }}
+              >
+                <img
+                  src={tech.icon}
+                  alt=""
+                  className="h-5 w-5 object-contain"
+                />
+                {tech.name}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-3 lg:hidden">
+          {techStack.map((tech) => (
+            <div key={tech.name} className="tech-pill">
+              <img
+                src={tech.icon}
+                alt=""
+                className="h-4 w-4 object-contain"
+              />
+              {tech.name}
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -52,4 +87,3 @@ const Home = () => {
 };
 
 export default Home;
-
