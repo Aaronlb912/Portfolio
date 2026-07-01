@@ -166,7 +166,7 @@ export const techStack = [
 export const data = [
   {
     id: 1,
-    name: "CivicHQ",
+    name: "CivicsHQ",
     slug: "civicshq",
     shortCode: "CVHQ",
     category: "Civic Tech",
