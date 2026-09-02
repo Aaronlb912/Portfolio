@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { contactMailto } from "../data/data.js";
 
 const Contact = () => {
   const [step, setStep] = useState(1);
@@ -20,16 +17,17 @@ const Contact = () => {
     <section name="contact" className="px-4 py-20 sm:px-6">
       <div className="mx-auto max-w-2xl">
         <p className="section-label text-center">save point</p>
-        <h2 className="mt-3 text-center pixel-heading text-[var(--color-text)]">
+        <h2 className="pixel-heading mt-3 text-center text-[var(--color-text)]">
           Send a message
         </h2>
 
-        <div className="tv-bezel mt-10 rounded-xl p-2 sm:p-3">
-          <div className="crt-screen">
+        <div className="tv-bezel mt-10 rounded-xl p-3 sm:p-4">
+          <div className="tv-screws" aria-hidden="true">
+            <span /><span /><span /><span />
+          </div>
+          <div className="crt-screen crt-on">
             <div className="crt-content">
-              <p className="crt-badge">
-                NEW GAME · CONTACT
-              </p>
+              <p className="crt-badge">NEW GAME · CONTACT</p>
 
               <form
                 method="POST"
@@ -38,15 +36,16 @@ const Contact = () => {
               >
                 {step === 1 ? (
                   <>
-                    <label className="retro-label">
+                    <label className="retro-label" htmlFor="arcade-reason">
                       QUEST TYPE *
                     </label>
                     <select
+                      id="arcade-reason"
                       name="reason"
                       required
                       value={formData.reason}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-accent)] focus:outline-none"
+                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-green)] focus:outline-none"
                     >
                       <option value="" disabled>
                         Select one…
@@ -57,17 +56,18 @@ const Contact = () => {
                       <option value="hello">Just saying hi</option>
                     </select>
 
-                    <label className="mt-5 block retro-label">
+                    <label className="retro-label mt-5 block" htmlFor="arcade-message">
                       MESSAGE *
                     </label>
                     <textarea
+                      id="arcade-message"
                       name="message"
                       required
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Your quest details..."
-                      className="mt-2 w-full resize-none rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:outline-none"
+                      placeholder="What's the gig?"
+                      className="mt-2 w-full resize-none rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-green)] focus:outline-none"
                     />
 
                     <button
@@ -83,28 +83,30 @@ const Contact = () => {
                     <input type="hidden" name="reason" value={formData.reason} />
                     <input type="hidden" name="message" value={formData.message} />
 
-                    <label className="retro-label">
+                    <label className="retro-label" htmlFor="arcade-name">
                       PLAYER NAME *
                     </label>
                     <input
+                      id="arcade-name"
                       type="text"
                       name="name"
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-accent)] focus:outline-none"
+                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-green)] focus:outline-none"
                     />
 
-                    <label className="mt-5 block retro-label">
+                    <label className="retro-label mt-5 block" htmlFor="arcade-email">
                       EMAIL *
                     </label>
                     <input
+                      id="arcade-email"
                       type="email"
                       name="email"
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-accent)] focus:outline-none"
+                      className="mt-2 w-full rounded border-2 border-[#30363d] bg-[var(--color-bg)] px-4 py-3 font-vt323 text-xl text-[var(--color-text)] focus:border-[var(--color-green)] focus:outline-none"
                     />
 
                     <div className="mt-6 flex gap-3">
@@ -125,31 +127,6 @@ const Contact = () => {
                   </>
                 )}
               </form>
-
-              <div className="mt-8 flex flex-wrap justify-center gap-4 border-t border-[#30363d] pt-6">
-                <a
-                  href="https://www.linkedin.com/in/aaron-bryant-dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xl text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-                >
-                  <FaLinkedin /> LinkedIn
-                </a>
-                <a
-                  href={contactMailto}
-                  className="flex items-center gap-2 text-xl text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-                >
-                  <HiOutlineMail /> Email
-                </a>
-                <a
-                  href="https://github.com/Aaronlb912"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xl text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-                >
-                  <FaGithub /> GitHub
-                </a>
-              </div>
             </div>
           </div>
         </div>

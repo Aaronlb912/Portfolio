@@ -6,6 +6,8 @@ module.exports = {
       fontFamily: {
         pixel: ['"Press Start 2P"', "cursive"],
         vt323: ['"VT323"', "monospace"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        classic: ['"Source Sans 3"', "system-ui", "sans-serif"],
       },
       keyframes: {
         float: {

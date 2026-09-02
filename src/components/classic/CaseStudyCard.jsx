@@ -1,48 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HiArrowNarrowRight } from "react-icons/hi";
 
-const CaseStudyCard = ({ project, compact = false }) => {
+const CaseStudyCard = ({ project, compact = false, index = 0 }) => {
   const hero = project.screenshots?.[0];
 
   return (
     <Link
       to={`/case-studies/${project.slug}`}
-      className={`project-card group block ${compact ? "project-card-compact" : ""}`}
-      style={{ backgroundColor: project.color }}
+      className="project-card work-reveal group"
+      style={{ animationDelay: `${index * 80}ms` }}
     >
-      {hero && !compact && (
-        <div className="mb-4 overflow-hidden rounded-xl border border-white/20 bg-black/15">
-          <img
-            src={hero.src}
-            alt={hero.alt}
-            className="h-36 w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-          />
-        </div>
-      )}
-
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-          {project.image ? (
-            <img src={project.image} alt="" className="h-6 w-6 object-contain" />
-          ) : (
-            <span className="text-xs font-bold uppercase">
-              {project.shortCode || project.name.slice(0, 2)}
-            </span>
-          )}
-        </div>
-        <HiArrowNarrowRight className="text-lg opacity-60 transition-opacity group-hover:opacity-100" />
+      <div
+        className={`project-card-shot ${compact ? "h-44 sm:h-48" : "h-48 sm:h-56"}`}
+        style={{ borderTop: `3px solid ${project.color}` }}
+      >
+        {hero ? (
+          <img src={hero.src} alt={hero.alt} />
+        ) : (
+          <div className="flex h-full items-center justify-center text-sm text-[var(--color-muted)]">
+            {project.name}
+          </div>
+        )}
       </div>
 
-      <div className={compact ? "pt-2" : "pt-4"}>
-        <p className="text-xs font-semibold uppercase tracking-widest text-white/70">
+      <div className={compact ? "flex flex-1 flex-col p-4" : "flex flex-1 flex-col p-5"}>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">
           {project.category}
         </p>
-        <h3 className="mt-2 text-2xl font-bold">{project.name}</h3>
-        <p className={`leading-relaxed text-white/80 ${compact ? "mt-2 text-sm line-clamp-3" : "mt-3 text-sm"}`}>
+        <h3 className={`font-medium ${compact ? "mt-1.5 text-xl" : "mt-2 text-2xl"}`}>
+          {project.name}
+        </h3>
+        <p
+          className={`leading-relaxed text-[var(--color-muted)] ${
+            compact ? "mt-2 line-clamp-2 text-sm" : "mt-3 text-sm"
+          }`}
+        >
           {project.description}
         </p>
-        <div className={compact ? "mt-3 flex flex-wrap gap-2" : "mt-5 flex flex-wrap gap-2"}>
+        <div className={`mt-auto flex flex-wrap gap-1.5 ${compact ? "pt-3" : "pt-4"}`}>
           {project.tags.map((tag) => (
             <span key={tag} className="tag-pill">
               {tag}

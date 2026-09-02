@@ -93,14 +93,13 @@ const ToolDeck = () => {
           Browse the toolkit.
         </h2>
         <p className="mt-3 max-w-xl text-lg text-[var(--color-muted)]">
-          Use the D-pad to move through the inventory grid - left/right and
-          up/down. You can also tap any item below.
+          Move the D-pad through the grid, or tap a tile.
         </p>
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
           <div className="mx-auto w-full max-w-md">
-            <div className="relative rounded-[3rem] bg-[#21262d] px-8 py-10 shadow-2xl border border-[#30363d]">
-              <div className="mb-6 flex justify-between px-2">
+            <div className="pad-shell relative rounded-[2.4rem] px-7 py-9">
+              <div className="mb-7 flex justify-between px-1">
                 <button
                   type="button"
                   onClick={() => navigate("left", "lb")}
@@ -119,19 +118,21 @@ const ToolDeck = () => {
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-8 sm:gap-14">
-                <div className="grid w-fit grid-cols-3 grid-rows-3 gap-1">
-                  {(["up", "left", "right", "down"]).map((key) => (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => navigate(key, key)}
-                      aria-label={`Move ${key}`}
-                      className={`controller-btn ${pressedButton === key ? "controller-btn-active" : ""} ${buttonLayout[key].className}`}
-                    >
-                      {buttonLayout[key].label}
-                    </button>
-                  ))}
+              <div className="flex items-center justify-center gap-8 sm:gap-12">
+                <div className="d-pad-well rounded-2xl p-2">
+                  <div className="grid w-fit grid-cols-3 grid-rows-3 gap-1">
+                    {["up", "left", "right", "down"].map((key) => (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => navigate(key, key)}
+                        aria-label={`Move ${key}`}
+                        className={`controller-btn ${pressedButton === key ? "controller-btn-active" : ""} ${buttonLayout[key].className}`}
+                      >
+                        {buttonLayout[key].label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2" aria-hidden="true">
@@ -149,21 +150,24 @@ const ToolDeck = () => {
               <p className="mt-6 text-center text-base text-[var(--color-muted)]">
                 D-pad moves in the grid · {activeIndex + 1} / {total}
               </p>
-              <p className="mt-2 text-center text-lg text-[var(--color-muted)]">
+              <p className="mt-1 text-center text-lg tracking-[0.2em] text-[var(--color-amber)]">
                 AARON PAD PRO
               </p>
             </div>
           </div>
 
-          <div className="tv-bezel rounded-xl p-2 sm:p-3">
-            <div className="crt-screen min-h-[320px]">
+          <div className="tv-bezel rounded-xl p-3 sm:p-4">
+            <div className="tv-screws" aria-hidden="true">
+              <span /><span /><span /><span />
+            </div>
+            <div className="crt-screen crt-on min-h-[320px]">
               <div className="crt-content min-h-[280px]">
                 <div className="animate-[tv-power-on_0.3s_ease-out]">
                   <p className="crt-badge">
                     TOOL {activeIndex + 1} OF {total}
                   </p>
                   <div className="mt-6 flex items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-white/10 p-2">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-[var(--color-green)]/30 bg-black/30 p-2">
                       <img
                         src={activeTool.icon}
                         alt=""
@@ -196,8 +200,8 @@ const ToolDeck = () => {
                 onClick={() => goTo(index)}
                 className={`flex flex-col items-center gap-2 rounded-lg border-2 p-4 transition-all duration-150 ${
                   activeIndex === index
-                    ? "border-[var(--color-accent)] bg-[var(--color-accent)]/10 shadow-[0_0_20px_rgba(106,154,230,0.3)]"
-                    : "border-[#30363d] bg-[var(--color-bg-panel)] hover:border-[var(--color-accent)]/50"
+                    ? "inventory-tile-active"
+                    : "border-[#2a2e36] bg-[var(--color-bg-panel)] hover:border-[var(--color-green)]/50"
                 }`}
               >
                 <img src={tool.icon} alt="" className="h-10 w-10 object-contain" />

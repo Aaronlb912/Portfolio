@@ -4,69 +4,91 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { data } from "../../data/data.js";
 import InteractiveTechPills from "../../components/classic/InteractiveTechPills.jsx";
 import CaseStudyCard from "../../components/classic/CaseStudyCard.jsx";
+import ClassicSkills from "../../components/classic/ClassicSkills.jsx";
 
 const ClassicHomePage = () => {
   const featured = data.slice(0, 3);
 
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-10 pt-4 sm:px-8 md:pb-16">
-        <div className="blob -top-32 -left-32 h-[500px] w-[500px] bg-[#6a9ae6]/20" />
-        <div className="blob top-1/4 -right-32 h-[400px] w-[400px] bg-[#8fb6d3]/25" />
-        <div className="blob-shape -left-[5%] top-[48%] hidden h-[90%] w-[58%] -translate-y-1/2 text-[#d4c4f0] opacity-20 lg:block" />
-
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold leading-tight tracking-tight text-[var(--color-text)] sm:text-6xl lg:text-7xl">
+      <section className="px-6 pb-16 pt-6 sm:px-8 md:pb-24 md:pt-10">
+        <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              01 / Front-End Engineer
+            </p>
+            <h1 className="mt-4 text-5xl font-medium tracking-tight text-[var(--color-text)] sm:text-6xl lg:text-[4.75rem] lg:leading-[1.05]">
               Aaron Bryant
             </h1>
-            <p className="mt-6 text-xl font-medium text-[var(--color-text)] sm:text-2xl">
-              Building thoughtful interfaces from idea to launch.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-text)] sm:text-xl">
+              I build the UI for product sites, design systems, and CMS
+              platforms. Fast pages that work for people.
             </p>
-            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-[var(--color-muted)] sm:text-lg lg:mx-0">
-              I create responsive, accessible web experiences with clean code and
-              seamless user flows - from enterprise CMS platforms to product builds,
-              with a focus on design and performance.
+            <p className="mt-5 text-sm text-[var(--color-muted)]">
+              React · TypeScript · Drupal · accessibility
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <a href="#contact" className="btn-primary">
-                Get in touch
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a href="#work" className="btn-primary">
+                See the work
                 <HiArrowNarrowRight className="text-lg" />
               </a>
-              <Link to="/case-studies" className="btn-secondary">
-                See case studies
-              </Link>
+              <a href="#contact" className="btn-secondary">
+                Get in touch
+              </a>
             </div>
           </div>
 
-          <div className="relative lg:min-h-[500px]">
+          <div className="lg:pt-10">
             <InteractiveTechPills />
           </div>
         </div>
       </section>
 
-      <section className="relative px-6 py-12 sm:px-8 md:py-16">
+      <section
+        id="work"
+        className="border-t border-[var(--color-rule)] px-6 py-16 sm:px-8 md:py-24"
+      >
         <div className="mx-auto max-w-6xl">
-          <div className="mb-8 flex items-end justify-between">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Featured work
-            </h2>
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                02 / Work
+              </p>
+              <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">
+                Selected interfaces
+              </h2>
+            </div>
             <Link
               to="/case-studies"
-              className="hidden items-center gap-1 text-sm font-medium text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)] sm:flex"
+              className="classic-link hidden items-center gap-1 text-sm sm:inline-flex"
             >
               All case studies
               <HiArrowNarrowRight />
             </Link>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3 lg:items-start">
-            {featured.map((project) => (
-              <CaseStudyCard key={project.id} project={project} compact />
+          <div className="grid gap-5 lg:grid-cols-3 lg:items-stretch">
+            {featured.map((project, index) => (
+              <CaseStudyCard
+                key={project.id}
+                project={project}
+                compact
+                index={index}
+              />
             ))}
           </div>
+
+          <Link
+            to="/case-studies"
+            className="classic-link mt-8 inline-flex items-center gap-1 text-sm sm:hidden"
+          >
+            All case studies
+            <HiArrowNarrowRight />
+          </Link>
         </div>
       </section>
+
+      <ClassicSkills />
     </>
   );
 };

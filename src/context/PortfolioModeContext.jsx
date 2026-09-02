@@ -19,6 +19,7 @@ export const PortfolioModeProvider = ({ children }) => {
 
   useEffect(() => {
     document.documentElement.dataset.portfolio = mode;
+    window.scrollTo(0, 0);
     try {
       localStorage.setItem(STORAGE_KEY, mode);
     } catch {

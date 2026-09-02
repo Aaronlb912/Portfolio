@@ -10,13 +10,12 @@ const Cartridge = ({ project, isSelected, isInserted, onSelect }) => {
       aria-pressed={isSelected}
     >
       <div
-        className="relative overflow-hidden rounded-t-lg rounded-b-sm border-2 border-[#484f58]"
+        className="cartridge-shell"
         style={{
-          background: `linear-gradient(180deg, ${project.labelColor} 0%, ${project.color} 40%, ${project.color} 100%)`,
-          height: "110px",
+          background: `linear-gradient(180deg, ${project.labelColor} 0%, ${project.color} 38%, #0d0e12 100%)`,
         }}
       >
-        <div className="mx-2 mt-2 rounded-sm border border-white/30 bg-white/90 px-1 py-2 text-center shadow-sm">
+        <div className="mx-2 mt-2 rounded-sm border border-black/20 bg-[#f4ead4] px-1 py-2 text-center shadow-sm">
           {project.image ? (
             <img
               src={project.image}
@@ -32,19 +31,17 @@ const Cartridge = ({ project, isSelected, isInserted, onSelect }) => {
         <p className="mt-1 px-1 text-center text-sm leading-tight text-white drop-shadow">
           {project.name}
         </p>
-        <div className="absolute bottom-8 left-0 right-0 h-px bg-black/20" />
-        <div className="absolute bottom-10 left-0 right-0 h-px bg-white/10" />
       </div>
-      <div className="flex justify-center gap-[2px] rounded-b bg-[#c9a227] px-1 py-1">
+      <div className="cartridge-contacts" aria-hidden="true">
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="h-3 w-[3px] rounded-sm bg-[#e8c547]" />
+          <span key={i} />
         ))}
       </div>
     </button>
   );
 };
 
-const TvScreen = ({ project, isLoading, isEmpty }) => {
+const TvScreen = ({ project, selectedProject, isLoading, isEmpty }) => {
   const [view, setView] = useState("info");
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -66,18 +63,30 @@ const TvScreen = ({ project, isLoading, isEmpty }) => {
   if (isEmpty) {
     return (
       <div className="flex min-h-[280px] flex-col items-center justify-center text-center sm:min-h-[340px]">
-        <p className="retro-label blink">
-          NO CARTRIDGE
-        </p>
-        <p className="mt-4 text-xl text-[var(--color-muted)]">
-          Insert a game to begin
-        </p>
+        {selectedProject ? (
+          <>
+            <p className="crt-badge text-[var(--color-amber)]">CART READY</p>
+            <p className="mt-4 text-3xl text-[var(--color-accent-glow)]">
+              {selectedProject.name}
+            </p>
+            <p className="mt-3 text-xl text-[var(--color-muted)]">
+              Press Insert to boot
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="retro-label blink">NO CARTRIDGE</p>
+            <p className="mt-4 text-xl text-[var(--color-muted)]">
+              Pick a cart from the shelf
+            </p>
+          </>
+        )}
         <div
-          className="mt-6 h-16 w-16 rounded-full opacity-20"
+          className="mt-6 h-16 w-16 rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
-            animation: "static-flicker 0.15s infinite",
+              "radial-gradient(circle, var(--color-green) 0%, transparent 70%)",
+            animation: "static-flicker 0.18s infinite",
           }}
         />
       </div>
@@ -329,39 +338,60 @@ const GameRoom = () => {
           Pick a cartridge. Insert. Play.
         </h2>
         <p className="mt-3 max-w-xl text-lg text-[var(--color-muted)]">
-          Each cart is a project I've shipped. Insert one, then browse the
-          case study, page screenshots, or visit the live site.
+          Each cart is a project I shipped. Insert one to read the case study,
+          flip through screenshots, or open the live site.
         </p>
 
         <div className="mt-12">
-          <div className="tv-bezel mx-auto max-w-4xl rounded-2xl p-3 sm:p-5">
-            <div className="mb-2 flex items-center justify-between px-2">
+          <div className="arcade-marquee mx-auto max-w-4xl">
+            <p className="text-lg sm:text-xl">Case Study Arcade</p>
+          </div>
+          <div className="tv-bezel mx-auto max-w-4xl rounded-b-2xl p-4 sm:p-5">
+            <div className="tv-screws" aria-hidden="true">
+              <span /><span /><span /><span />
+            </div>
+            <div className="mb-3 flex items-center justify-between px-1">
               <span className="text-base text-[var(--color-muted)]">
                 BRYANT-TV
               </span>
               <div className="flex items-center gap-2">
                 <span
-                  className={`h-2 w-2 rounded-full ${insertedId ? "bg-[var(--color-green)] shadow-[0_0_8px_var(--color-green)]" : "bg-[#484f58]"}`}
+                  className={`h-2 w-2 rounded-full ${
+                    insertedId
+                      ? "bg-[var(--color-green)] shadow-[0_0_8px_var(--color-green)]"
+                      : selectedId
+                        ? "bg-[var(--color-amber)] shadow-[0_0_8px_var(--color-amber)]"
+                        : "bg-[#484f58]"
+                  }`}
                 />
                 <span className="text-base text-[var(--color-muted)]">
-                  {insertedId ? "ON" : "STBY"}
+                  {insertedId ? "ON" : selectedId ? "READY" : "STBY"}
                 </span>
               </div>
             </div>
 
-            <div className="crt-screen">
+            <div
+              className={`crt-screen ${
+                insertedId ? "crt-on" : selectedId ? "crt-ready" : ""
+              }`}
+            >
               <div className="crt-content">
                 <TvScreen
                   key={insertedId ?? "empty"}
                   project={insertedProject}
+                  selectedProject={selectedProject}
                   isLoading={isLoading}
                   isEmpty={!insertedId && !isLoading}
                 />
               </div>
             </div>
 
-            <div className="mx-auto mt-3 h-3 w-32 rounded-b-lg bg-[#30363d]" />
-            <div className="mx-auto h-2 w-48 rounded-b-xl bg-[#21262d]" />
+            <div className="mx-auto mt-3 h-3 w-32 rounded-b-lg bg-[#2a2e36]" />
+            <div className="mx-auto mt-1 flex justify-center gap-1">
+              {[...Array(9)].map((_, i) => (
+                <span key={i} className="h-1 w-5 rounded-sm bg-[#1a1c22]" />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -370,7 +400,7 @@ const GameRoom = () => {
             <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
               <div className="flex flex-col items-center">
                 <div
-                  className={`relative w-20 rounded-b-lg border-2 border-[#484f58] bg-[#0d1117] transition-all duration-300 ${selectedProject && !isLoading ? "h-16 shadow-[inset_0_0_20px_rgba(106,154,230,0.3)]" : "h-12"}`}
+                  className={`relative w-20 rounded-b-lg border-2 border-[#484f58] bg-[#06070a] transition-all duration-300 ${selectedProject && !isLoading ? "h-16 shadow-[inset_0_0_20px_rgba(61,255,138,0.35)]" : "h-12"}`}
                 >
                   {selectedProject && !insertedId && !isLoading && (
                     <div
@@ -448,8 +478,9 @@ const GameRoom = () => {
 
         <div className="mt-10">
           <p className="section-label text-center">game shelf</p>
-          <div className="mt-4 rounded-xl border-2 border-[#30363d] bg-[var(--color-bg-panel)] p-4 sm:p-6">
-            <div className="flex gap-4 overflow-x-auto pb-2 justify-center sm:justify-start">
+          <div className="cart-shelf mt-4 rounded-xl p-4 sm:p-6">
+            <div className="mb-3 h-2 rounded-sm bg-[#c9a227]/40" />
+            <div className="flex justify-center gap-4 overflow-x-auto pb-2 sm:justify-start">
               {data.map((project) => (
                 <Cartridge
                   key={project.id}

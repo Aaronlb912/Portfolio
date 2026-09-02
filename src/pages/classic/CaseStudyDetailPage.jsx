@@ -17,24 +17,27 @@ const CaseStudyDetailPage = () => {
   const nextProject = data[(currentIndex + 1) % data.length];
 
   return (
-    <article className="relative px-6 py-12 sm:px-8 md:py-16">
+    <article className="px-6 py-12 sm:px-8 md:py-20">
       <div className="mx-auto max-w-4xl">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[var(--color-muted)]">
-          <Link to="/" className="hover:text-[var(--color-accent)]">
+        <nav
+          className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[var(--color-muted)]"
+          aria-label="Breadcrumb"
+        >
+          <Link to="/" className="classic-link">
             Aaron Bryant
           </Link>
-          <span>/</span>
-          <Link to="/case-studies" className="hover:text-[var(--color-accent)]">
+          <span aria-hidden="true">/</span>
+          <Link to="/case-studies" className="classic-link">
             Case Studies
           </Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <span className="text-[var(--color-text)]">{project.name}</span>
         </nav>
 
-        <p className="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
           {project.category}
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-medium tracking-tight sm:text-5xl">
           {project.name}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[var(--color-muted)]">
@@ -61,7 +64,7 @@ const CaseStudyDetailPage = () => {
               <HiOutlineExternalLink />
             </a>
           ) : (
-            <span className="inline-flex items-center rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-[var(--color-muted)]">
+            <span className="inline-flex items-center rounded-md border border-[var(--color-rule)] px-4 py-2 text-sm font-medium text-[var(--color-muted)]">
               Site offline
             </span>
           )}
@@ -69,7 +72,7 @@ const CaseStudyDetailPage = () => {
 
         {photos.length > 0 && (
           <div className="mt-12">
-            <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+            <div className="shot-frame">
               <img
                 src={photos[photoIndex].src}
                 alt={photos[photoIndex].alt}
@@ -81,16 +84,23 @@ const CaseStudyDetailPage = () => {
                 <p className="mt-3 text-center text-sm text-[var(--color-muted)]">
                   {photoIndex + 1} / {photos.length} - {photos[photoIndex].alt}
                 </p>
-                <div className="mt-4 flex justify-center gap-2 overflow-x-auto pb-1">
+                <div
+                  className="mt-4 flex justify-center gap-2 overflow-x-auto pb-1"
+                  role="tablist"
+                  aria-label="Project screenshots"
+                >
                   {photos.map((shot, index) => (
                     <button
                       key={shot.alt}
                       type="button"
+                      role="tab"
+                      aria-selected={index === photoIndex}
+                      aria-label={shot.alt}
                       onClick={() => setPhotoIndex(index)}
-                      className={`h-16 w-24 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                      className={`h-16 w-24 flex-shrink-0 overflow-hidden rounded-md border-2 transition-opacity duration-200 ${
                         index === photoIndex
                           ? "border-[var(--color-accent)]"
-                          : "border-black/10 opacity-70 hover:opacity-100"
+                          : "border-[var(--color-rule)] opacity-70 hover:opacity-100"
                       }`}
                     >
                       <img
@@ -108,14 +118,14 @@ const CaseStudyDetailPage = () => {
 
         {project.highlights?.length > 0 && (
           <section className="mt-14">
-            <h2 className="text-2xl font-bold">Highlights</h2>
+            <h2 className="text-2xl font-medium">Highlights</h2>
             <ul className="mt-5 space-y-3">
               {project.highlights.map((item) => (
                 <li
                   key={item}
                   className="flex gap-3 text-base leading-relaxed text-[var(--color-muted)]"
                 >
-                  <span className="mt-1 text-[var(--color-accent)]">•</span>
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-accent)]" />
                   {item}
                 </li>
               ))}
@@ -123,23 +133,23 @@ const CaseStudyDetailPage = () => {
           </section>
         )}
 
-        <div className="mt-16 rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
+        <div className="mt-16 rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">
             Next
           </p>
           <Link
             to={`/case-studies/${nextProject.slug}`}
-            className="mt-3 group flex items-center justify-between gap-4"
+            className="group mt-3 flex items-center justify-between gap-4"
           >
             <div>
-              <h3 className="text-xl font-bold group-hover:text-[var(--color-accent)]">
+              <h3 className="text-xl font-medium group-hover:text-[var(--color-accent)]">
                 {nextProject.name}
               </h3>
               <p className="mt-1 text-sm text-[var(--color-muted)]">
                 {nextProject.category}
               </p>
             </div>
-            <HiArrowNarrowRight className="text-xl transition-transform group-hover:translate-x-1" />
+            <HiArrowNarrowRight className="text-xl transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

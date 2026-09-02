@@ -190,7 +190,7 @@ export const data = [
       "Match score tool to compare your views with representatives",
     ],
     description:
-      "Public utility platform for civic engagement. Track 8,000+ active bills, browse politician profiles, look up your district, and explore legislative match scores — no account required.",
+      "Public utility platform for civic engagement. Track 8,000+ active bills, browse politician profiles, look up your district, and explore legislative match scores. No account required.",
   },
   {
     id: 2,

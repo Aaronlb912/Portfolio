@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiArrowNarrowRight, HiOutlineMail } from "react-icons/hi";
-import { contactMailto } from "../../data/data.js";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 const ClassicContact = () => {
   const [step, setStep] = useState(1);
@@ -19,24 +17,28 @@ const ClassicContact = () => {
   const canContinue = formData.reason && formData.message.trim();
 
   return (
-    <section id="contact" name="contact" className="relative px-6 py-16 sm:px-8 md:py-20">
-      <div className="blob -right-20 top-0 h-[280px] w-[280px] bg-[#6a9ae6]/15" />
-
-      <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-12">
+    <section
+      id="contact"
+      name="contact"
+      className="border-t border-[var(--color-rule)] px-6 py-16 sm:px-8 md:py-24"
+    >
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Let&apos;s build something.
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+            04 / Contact
+          </p>
+          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl">
+            Hiring for front-end? Got a UI that needs to ship?
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
-            Always interested in new opportunities, technical challenges, or
-            collaborations.
+          <p className="mt-4 max-w-md text-base leading-relaxed text-[var(--color-muted)]">
+            Full-time, contract, or a one-off build. Write me and I will write back.
           </p>
           <div className="mt-10">
-            <p className="text-lg font-semibold text-[var(--color-text)]">
+            <p className="font-display text-lg font-medium text-[var(--color-text)]">
               Aaron Bryant
             </p>
             <p className="mt-1 text-sm text-[var(--color-muted)]">
-              Front-End Engineer · React · Drupal · TypeScript
+              Front-End Engineer
             </p>
           </div>
         </div>
@@ -48,10 +50,11 @@ const ClassicContact = () => {
           >
             {step === 1 ? (
               <>
-                <label className="contact-label">
+                <label htmlFor="reason" className="contact-label">
                   I&apos;m reaching out about *
                 </label>
                 <select
+                  id="reason"
                   name="reason"
                   required
                   value={formData.reason}
@@ -67,14 +70,17 @@ const ClassicContact = () => {
                   <option value="hello">Just saying hi</option>
                 </select>
 
-                <label className="contact-label mt-5 block">Message *</label>
+                <label htmlFor="message" className="contact-label mt-5 block">
+                  Message *
+                </label>
                 <textarea
+                  id="message"
                   name="message"
                   required
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="A few words about what you have in mind…"
+                  placeholder="A few words about the role or the interface…"
                   className="classic-input mt-2 resize-none"
                 />
 
@@ -93,8 +99,11 @@ const ClassicContact = () => {
                 <input type="hidden" name="reason" value={formData.reason} />
                 <input type="hidden" name="message" value={formData.message} />
 
-                <label className="contact-label">Your name *</label>
+                <label htmlFor="name" className="contact-label">
+                  Your name *
+                </label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   required
@@ -103,8 +112,11 @@ const ClassicContact = () => {
                   className="classic-input mt-2"
                 />
 
-                <label className="contact-label mt-5 block">Email *</label>
+                <label htmlFor="email" className="contact-label mt-5 block">
+                  Email *
+                </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   required
@@ -128,28 +140,6 @@ const ClassicContact = () => {
               </>
             )}
           </form>
-
-          <div className="mt-8 flex flex-wrap gap-4 border-t border-black/5 pt-6">
-            <a
-              href="https://www.linkedin.com/in/aaron-bryant-dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
-            <a href={contactMailto} className="contact-link">
-              <HiOutlineMail /> Email
-            </a>
-            <a
-              href="https://github.com/Aaronlb912"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-            >
-              <FaGithub /> GitHub
-            </a>
-          </div>
         </div>
       </div>
     </section>
