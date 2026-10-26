@@ -10,6 +10,14 @@ import civicshq_03 from "../assets/screenshots/civicshq/03-politicians.png";
 import civicshq_04 from "../assets/screenshots/civicshq/04-my-district.png";
 import civicshq_05 from "../assets/screenshots/civicshq/05-match.png";
 
+import didi from "../assets/did-i.png";
+import didi_01 from "../assets/screenshots/did-i/01-home.png";
+import didi_02 from "../assets/screenshots/did-i/02-download.png";
+import didi_03 from "../assets/screenshots/did-i/03-adhd.png";
+import didi_04 from "../assets/screenshots/did-i/04-no-nagging.png";
+import didi_05 from "../assets/screenshots/did-i/05-beta.png";
+import civichall from "../assets/civichall.webp";
+
 import anithrift from "../assets/anithrift.png";
 import anithrift_01 from "../assets/screenshots/anithrift/01-home.png";
 import anithrift_02 from "../assets/screenshots/anithrift/02-sell.png";
@@ -165,135 +173,31 @@ export const techStack = [
 
 export const data = [
   {
-    id: 1,
-    name: "CivicsHQ",
-    slug: "civicshq",
-    shortCode: "CVHQ",
-    category: "Civic Tech",
-    image: civicshq,
-    url: "https://civicshq.com",
-    github: "https://github.com/abryantdev/CivicsHQ",
+    id: 7,
+    name: "Did I",
+    slug: "did-i",
+    shortCode: "DDID",
+    category: "Mobile & PWA",
+    image: didi,
+    url: "https://did-i.app",
     live: true,
-    color: "#1a5c45",
-    labelColor: "#2d8a66",
-    tags: ["Next.js", "TypeScript", "Civic Data"],
+    color: "#2f7d6d",
+    labelColor: "#5fc2ad",
+    tags: ["React", "Expo", "Supabase", "PWA"],
     screenshots: [
-      { src: civicshq_01, alt: "Civic dashboard" },
-      { src: civicshq_02, alt: "Legislation feed" },
-      { src: civicshq_03, alt: "Politician lookup" },
-      { src: civicshq_04, alt: "District lookup" },
-      { src: civicshq_05, alt: "Match score" },
+      { src: didi_01, alt: "Homepage" },
+      { src: didi_02, alt: "Download" },
+      { src: didi_03, alt: "Habit tracker for ADHD" },
+      { src: didi_04, alt: "Ask without nagging" },
+      { src: didi_05, alt: "Android beta" },
     ],
     highlights: [
-      "Federal and state legislative tracker with AI summaries",
-      "Politician profiles and district lookup by address or ZIP",
-      "Match score tool to compare your views with representatives",
+      "One question at a time on a widget, Apple Watch, or reminder",
+      "Works offline as a PWA, with an Android app on the same UI",
+      "Friends and families, sync through Supabase, eight languages",
     ],
     description:
-      "Public utility platform for civic engagement. Track 8,000+ active bills, browse politician profiles, look up your district, and explore legislative match scores. No account required.",
-  },
-  {
-    id: 2,
-    name: "Pasteproof",
-    slug: "pasteproof",
-    shortCode: "PSTP",
-    category: "SaaS",
-    image: pasteproof,
-    url: "https://pasteproof.com",
-    color: "#6a9ae6",
-    labelColor: "#7fb6f4",
-    tags: ["React", "Node.js", "Auth"],
-    screenshots: [
-      { src: pasteproof_01, alt: "Homepage" },
-      { src: pasteproof_02, alt: "Pricing" },
-      { src: pasteproof_03, alt: "Interactive playground" },
-      { src: pasteproof_04, alt: "Browser extension" },
-      { src: pasteproof_05, alt: "APIs & Slack" },
-    ],
-    highlights: [
-      "Secure user authentication and data management",
-      "Modern React frontend with responsive UI",
-      "Built for scale across devices",
-    ],
-    description:
-      "Full-stack app with secure authentication, responsive UI, and a modern React frontend built for scale.",
-  },
-  {
-    id: 3,
-    name: "Freddie Mac",
-    slug: "freddie-mac",
-    shortCode: "FDMC",
-    category: "Enterprise",
-    image: freddie_mac_logo,
-    url: "https://sf.freddiemac.com",
-    color: "#5c8a6e",
-    labelColor: "#8bc4a0",
-    tags: ["Drupal", "PHP", "CI/CD"],
-    screenshots: [
-      { src: freddie_01, alt: "Homepage" },
-      { src: freddie_02, alt: "Working with Us" },
-      { src: freddie_03, alt: "Technology & learning" },
-      { src: freddie_04, alt: "News & insights" },
-      { src: freddie_05, alt: "Mortgage products" },
-    ],
-    highlights: [
-      "100% uptime on a mission-critical web ecosystem",
-      "Led platform migration from legacy systems",
-      "End-to-end Drupal content deployment pipeline",
-    ],
-    description:
-      "Mission-critical web ecosystem with 100% uptime, platform migration, and end-to-end Drupal content deployment.",
-  },
-  {
-    id: 4,
-    name: "Jasaron",
-    slug: "jasaron",
-    shortCode: "JSRN",
-    category: "Education",
-    image: jasaron,
-    live: false,
-    color: "#e8a838",
-    labelColor: "#ffd166",
-    tags: ["HTML5", "CSS3", "UX"],
-    screenshots: [
-      { src: jasaron, alt: "Homepage" },
-      { src: jasaron_03, alt: "Services" },
-      { src: jasaron_04, alt: "Book a session" },
-      { src: jasaron_05, alt: "Contact us" },
-    ],
-    highlights: [
-      "Responsive educational interfaces aligned to client goals",
-      "Full client website maintenance and optimization",
-      "UX-driven usability improvements from market research",
-    ],
-    description:
-      "Responsive educational interfaces, client site maintenance, and UX-driven usability improvements.",
-  },
-  {
-    id: 5,
-    name: "IBM Search",
-    slug: "ibm-search",
-    shortCode: "IBMQ",
-    category: "Enterprise",
-    image: ibm_logo,
-    url: "https://www.ibm.com/support/pages/ibmsearch",
-    color: "#4a6670",
-    labelColor: "#6a9ae6",
-    tags: ["Drupal", "PHP", "Search"],
-    screenshots: [
-      { src: ibm_01, alt: "IBM Search" },
-      { src: ibm_02, alt: "Search results" },
-      { src: ibm_03, alt: "Support portal" },
-      { src: ibm_04, alt: "Fix Central" },
-      { src: ibm_05, alt: "Documentation" },
-    ],
-    highlights: [
-      "Diagnostic scripts for Drupal content reconciliation",
-      "Advanced search query capabilities in Drupal",
-      "Nuanced content discovery for end users",
-    ],
-    description:
-      "Diagnostic scripts for Drupal content reconciliation and advanced search query capabilities.",
+      "Habit reminder app for people who forget to open habit trackers. Tap Did or Not yet. No account needed to start.",
   },
   {
     id: 6,
@@ -322,6 +226,175 @@ export const data = [
     ],
     description:
       "Anime merch marketplace for collectors. Browse pre-loved figures, manga, and apparel; list for free with Stripe payouts, secure checkout, and in-app messaging.",
+  },
+  {
+    id: 2,
+    name: "Pasteproof",
+    slug: "pasteproof",
+    shortCode: "PSTP",
+    category: "SaaS",
+    image: pasteproof,
+    url: "https://pasteproof.com",
+    color: "#6a9ae6",
+    labelColor: "#7fb6f4",
+    tags: ["React", "Node.js", "Auth"],
+    screenshots: [
+      { src: pasteproof_01, alt: "Homepage" },
+      { src: pasteproof_02, alt: "Pricing" },
+      { src: pasteproof_03, alt: "Interactive playground" },
+      { src: pasteproof_04, alt: "Browser extension" },
+      { src: pasteproof_05, alt: "APIs & Slack" },
+    ],
+    highlights: [
+      "Secure user authentication and data management",
+      "Modern React frontend with responsive UI",
+      "Built for scale across devices",
+    ],
+    description:
+      "Full-stack app with secure authentication, responsive UI, and a modern React frontend built for scale.",
+  },
+  {
+    id: 9,
+    name: "CivicHall",
+    slug: "civichall",
+    shortCode: "CVHL",
+    category: "Drupal",
+    image: civichall,
+    github: "https://github.com/Aaronlb912/civic_hall",
+    live: false,
+    color: "#1f3a5f",
+    labelColor: "#6f9bd1",
+    tags: ["Drupal", "PHP", "Twig"],
+    highlights: [
+      "Drupal CMS site template for city clerks and one-person IT shops",
+      "Custom content types: How do I, Department, Official, Meeting, News, City alert",
+      "Mercury subtheme, search, contact and records request forms",
+    ],
+    description:
+      "Municipal site template on Drupal CMS with sample content for a fictional town, built so a clerk can install it and rename it.",
+  },
+  {
+    id: 8,
+    name: "Fledge",
+    slug: "fledge",
+    shortCode: "FLDG",
+    category: "Developer Tools",
+    live: false,
+    color: "#3b6ea8",
+    labelColor: "#7fb0e6",
+    tags: ["Next.js", "TypeScript", "Supabase"],
+    highlights: [
+      "Visual editor so clients change text, images, pages, and theme without a developer",
+      "Draft and publish with version history, restore, and undo",
+      "Row-level security so only site members can open the editor",
+    ],
+    description:
+      "Hand off a client site built in Next.js. Owners edit blocks, pages, and theme in a visual editor, and developers keep the code.",
+  },
+  {
+    id: 3,
+    name: "Freddie Mac",
+    slug: "freddie-mac",
+    shortCode: "FDMC",
+    category: "Enterprise",
+    image: freddie_mac_logo,
+    url: "https://sf.freddiemac.com",
+    color: "#5c8a6e",
+    labelColor: "#8bc4a0",
+    tags: ["Drupal", "PHP", "CI/CD"],
+    screenshots: [
+      { src: freddie_01, alt: "Homepage" },
+      { src: freddie_02, alt: "Working with Us" },
+      { src: freddie_03, alt: "Technology & learning" },
+      { src: freddie_04, alt: "News & insights" },
+      { src: freddie_05, alt: "Mortgage products" },
+    ],
+    highlights: [
+      "100% uptime on a mission-critical web ecosystem",
+      "Led platform migration from legacy systems",
+      "End-to-end Drupal content deployment pipeline",
+    ],
+    description:
+      "Mission-critical web ecosystem with 100% uptime, platform migration, and end-to-end Drupal content deployment.",
+  },
+  {
+    id: 5,
+    name: "IBM Search",
+    slug: "ibm-search",
+    shortCode: "IBMQ",
+    category: "Enterprise",
+    image: ibm_logo,
+    url: "https://www.ibm.com/support/pages/ibmsearch",
+    color: "#4a6670",
+    labelColor: "#6a9ae6",
+    tags: ["Drupal", "PHP", "Search"],
+    screenshots: [
+      { src: ibm_01, alt: "IBM Search" },
+      { src: ibm_02, alt: "Search results" },
+      { src: ibm_03, alt: "Support portal" },
+      { src: ibm_04, alt: "Fix Central" },
+      { src: ibm_05, alt: "Documentation" },
+    ],
+    highlights: [
+      "Diagnostic scripts for Drupal content reconciliation",
+      "Advanced search query capabilities in Drupal",
+      "Nuanced content discovery for end users",
+    ],
+    description:
+      "Diagnostic scripts for Drupal content reconciliation and advanced search query capabilities.",
+  },
+  {
+    id: 1,
+    name: "CivicsHQ",
+    slug: "civicshq",
+    shortCode: "CVHQ",
+    category: "Civic Tech",
+    image: civicshq,
+    url: "https://civicshq.com",
+    github: "https://github.com/abryantdev/CivicsHQ",
+    live: true,
+    color: "#1a5c45",
+    labelColor: "#2d8a66",
+    tags: ["Next.js", "TypeScript", "Civic Data"],
+    screenshots: [
+      { src: civicshq_01, alt: "Civic dashboard" },
+      { src: civicshq_02, alt: "Legislation feed" },
+      { src: civicshq_03, alt: "Politician lookup" },
+      { src: civicshq_04, alt: "District lookup" },
+      { src: civicshq_05, alt: "Match score" },
+    ],
+    highlights: [
+      "Federal and state legislative tracker with AI summaries",
+      "Politician profiles and district lookup by address or ZIP",
+      "Match score tool to compare your views with representatives",
+    ],
+    description:
+      "Public utility platform for civic engagement. Track 8,000+ active bills, browse politician profiles, look up your district, and explore legislative match scores. No account required.",
+  },
+  {
+    id: 4,
+    name: "Jasaron",
+    slug: "jasaron",
+    shortCode: "JSRN",
+    category: "Education",
+    image: jasaron,
+    live: false,
+    color: "#e8a838",
+    labelColor: "#ffd166",
+    tags: ["HTML5", "CSS3", "UX"],
+    screenshots: [
+      { src: jasaron, alt: "Homepage" },
+      { src: jasaron_03, alt: "Services" },
+      { src: jasaron_04, alt: "Book a session" },
+      { src: jasaron_05, alt: "Contact us" },
+    ],
+    highlights: [
+      "Responsive educational interfaces aligned to client goals",
+      "Full client website maintenance and optimization",
+      "UX-driven usability improvements from market research",
+    ],
+    description:
+      "Responsive educational interfaces, client site maintenance, and UX-driven usability improvements.",
   },
 ];
 

@@ -10,6 +10,16 @@ const WAYBACK = "https://web.archive.org/web/20230601000000";
 /** @type {{ slug: string; shots: { name: string; url: string; search?: string }[] }[]} */
 const sites = [
   {
+    slug: "did-i",
+    shots: [
+      { name: "01-home", url: "https://did-i.app/" },
+      { name: "02-download", url: "https://did-i.app/download" },
+      { name: "03-adhd", url: "https://did-i.app/habit-tracker-for-adhd/" },
+      { name: "04-no-nagging", url: "https://did-i.app/ask-without-nagging/" },
+      { name: "05-beta", url: "https://did-i.app/beta" },
+    ],
+  },
+  {
     slug: "pasteproof",
     shots: [
       { name: "01-home", url: "https://pasteproof.com/" },
@@ -105,11 +115,11 @@ const sites = [
   {
     slug: "anithrift",
     shots: [
-      { name: "01-home", url: "https://www.anithrift.com/" },
-      { name: "02-sell", url: "https://www.anithrift.com/listing" },
-      { name: "03-signin", url: "https://www.anithrift.com/auth/login" },
-      { name: "04-about", url: "https://www.anithrift.com/search" },
-      { name: "05-forum", url: "https://www.anithrift.com/category/figures" },
+      { name: "01-home", url: "https://dev.anithrift.com/" },
+      { name: "02-sell", url: "https://dev.anithrift.com/help/why-choose-us" },
+      { name: "03-signin", url: "https://dev.anithrift.com/auth/login" },
+      { name: "04-about", url: "https://dev.anithrift.com/search" },
+      { name: "05-forum", url: "https://dev.anithrift.com/category/figures" },
     ],
   },
 ];
@@ -123,7 +133,7 @@ async function dismissOverlays(page) {
     'button:has-text("I Agree")',
     'button:has-text("Allow all")',
     'button:has-text("Got it")',
-    'button:has-text("OK")',
+    'button:text-is("OK")',
     '[aria-label="Close"]',
     '[aria-label="Dismiss promotion banner"]',
   ];
@@ -209,12 +219,14 @@ async function captureSite(browser, site) {
   await page.close();
 }
 
+const only = process.argv[2];
+
 async function main() {
   mkdirSync(assetsDir, { recursive: true });
 
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, channel: process.env.PW_CHANNEL });
   try {
-    for (const site of sites) {
+    for (const site of sites.filter((x) => !only || x.slug === only)) {
       await captureSite(browser, site);
     }
   } finally {
@@ -222,7 +234,7 @@ async function main() {
   }
 
   console.log("\nDone.");
-  for (const site of sites) {
+  for (const site of sites.filter((x) => !only || x.slug === only)) {
     const dir = path.join(assetsDir, site.slug);
     const files = readdirSync(dir).filter((f) => f.endsWith(".png"));
     console.log(`  ${site.slug}: ${files.length} screenshots`);
