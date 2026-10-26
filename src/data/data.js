@@ -247,15 +247,14 @@ export const data = [
     category: "SaaS",
     image: pasteproof,
     url: "https://pasteproof.com",
-    github: "https://github.com/Aaronlb912/pasteproof",
     color: "#6a9ae6",
     labelColor: "#7fb6f4",
     story: {
-      role: "Built the browser extension and its web app front end in React and TypeScript.",
+      role: "Part of a small team. I built the website: the homepage, pricing, playground, and product pages. A teammate built the browser extension.",
       problem: "People paste personal data and secrets into web forms by accident, and nothing warns them first.",
-      result: "Detection runs in the browser, so pasted text is not sent anywhere. It works in Chrome, Firefox, and other Chromium browsers.",
+      result: "Live at pasteproof.com. The extension runs detection in the browser, so pasted text is not sent anywhere.",
     },
-    tags: ["React", "TypeScript", "Browser Extension"],
+    tags: ["React", "TypeScript", "Marketing Site"],
     screenshots: [
       { src: pasteproof_01, alt: "Homepage" },
       { src: pasteproof_02, alt: "Pricing" },
@@ -264,9 +263,9 @@ export const data = [
       { src: pasteproof_05, alt: "APIs & Slack" },
     ],
     highlights: [
-      "Finds personal data and secrets as you type or paste, all in the browser",
-      "Skips fields meant for that data, like an email box, to cut false alarms",
-      "Works in Chrome, Firefox, and other Chromium browsers, with Vitest unit tests",
+      "Built the pasteproof.com site: homepage, pricing, and product pages",
+      "Interactive playground so visitors can try detection before installing",
+      "Pages for the browser extension, APIs, and Slack integration",
     ],
     description:
       "Browser extension that warns you before you paste personal data or secrets into a web form. Detection runs in your browser.",
