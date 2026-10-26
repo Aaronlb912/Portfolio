@@ -10,6 +10,9 @@ import civicshq_03 from "../assets/screenshots/civicshq/03-politicians.png";
 import civicshq_04 from "../assets/screenshots/civicshq/04-my-district.png";
 import civicshq_05 from "../assets/screenshots/civicshq/05-match.png";
 
+import fledge_01 from "../assets/screenshots/fledge/02-editor.png";
+import fledge_02 from "../assets/screenshots/fledge/01-published-site.png";
+import fledge_03 from "../assets/screenshots/fledge/03-manage.png";
 import didi from "../assets/did-i.png";
 import didi_01 from "../assets/screenshots/did-i/01-home.png";
 import didi_02 from "../assets/screenshots/did-i/02-download.png";
@@ -183,6 +186,11 @@ export const data = [
     live: true,
     color: "#2f7d6d",
     labelColor: "#5fc2ad",
+    story: {
+      role: "Designed and built it alone: the web app, the iPhone and Android apps, the Supabase backend, and the public site.",
+      problem: "Habit apps only work if you open them. People forget to open them, so they never know if they locked the door or took the pills.",
+      result: "Live at did-i.app. Free on iPhone, Android in beta, works offline as a PWA, and runs in eight languages.",
+    },
     tags: ["React", "Expo", "Supabase", "PWA"],
     screenshots: [
       { src: didi_01, alt: "Homepage" },
@@ -207,10 +215,14 @@ export const data = [
     category: "E-Commerce",
     image: anithrift,
     url: "https://www.anithrift.com/",
-    github: "https://github.com/Aaronlb912/AniThrift",
     live: true,
     color: "#c44dff",
     labelColor: "#ff6bcb",
+    story: {
+      role: "Built the whole marketplace alone: storefront, seller tools, Stripe checkout and payouts, messaging, and the staging and production setup.",
+      problem: "Collectors have no good place to sell pre-loved anime merch without high fees or rough listing tools.",
+      result: "Live at anithrift.com. Free to list, sellers pay a fee only when an item sells, and payouts run through Stripe.",
+    },
     tags: ["TypeScript", "Supabase", "Vercel", "Stripe"],
     screenshots: [
       { src: anithrift_01, alt: "Homepage" },
@@ -235,9 +247,15 @@ export const data = [
     category: "SaaS",
     image: pasteproof,
     url: "https://pasteproof.com",
+    github: "https://github.com/Aaronlb912/pasteproof",
     color: "#6a9ae6",
     labelColor: "#7fb6f4",
-    tags: ["React", "Node.js", "Auth"],
+    story: {
+      role: "Built the browser extension and its web app front end in React and TypeScript.",
+      problem: "People paste personal data and secrets into web forms by accident, and nothing warns them first.",
+      result: "Detection runs in the browser, so pasted text is not sent anywhere. It works in Chrome, Firefox, and other Chromium browsers.",
+    },
+    tags: ["React", "TypeScript", "Browser Extension"],
     screenshots: [
       { src: pasteproof_01, alt: "Homepage" },
       { src: pasteproof_02, alt: "Pricing" },
@@ -246,12 +264,12 @@ export const data = [
       { src: pasteproof_05, alt: "APIs & Slack" },
     ],
     highlights: [
-      "Secure user authentication and data management",
-      "Modern React frontend with responsive UI",
-      "Built for scale across devices",
+      "Finds personal data and secrets as you type or paste, all in the browser",
+      "Skips fields meant for that data, like an email box, to cut false alarms",
+      "Works in Chrome, Firefox, and other Chromium browsers, with Vitest unit tests",
     ],
     description:
-      "Full-stack app with secure authentication, responsive UI, and a modern React frontend built for scale.",
+      "Browser extension that warns you before you paste personal data or secrets into a web form. Detection runs in your browser.",
   },
   {
     id: 9,
@@ -264,6 +282,11 @@ export const data = [
     live: false,
     color: "#1f3a5f",
     labelColor: "#6f9bd1",
+    story: {
+      role: "Built the site template, the content types, and the theme on Drupal CMS.",
+      problem: "Small cities and one-person IT shops need a clean municipal site and rarely have a developer to build one.",
+      result: "A public Drupal template with six content types, a Mercury subtheme, search, and forms. A clerk installs it and renames it.",
+    },
     tags: ["Drupal", "PHP", "Twig"],
     highlights: [
       "Drupal CMS site template for city clerks and one-person IT shops",
@@ -277,12 +300,23 @@ export const data = [
     id: 8,
     name: "Fledge",
     slug: "fledge",
+    status: "Private repository",
     shortCode: "FLDG",
     category: "Developer Tools",
     live: false,
     color: "#3b6ea8",
     labelColor: "#7fb0e6",
+    story: {
+      role: "Built it alone: the block editor, draft and publish flow, access rules, and the export tool.",
+      problem: "Developers who build client sites in Next.js get called for every text change after launch.",
+      result: "Owners edit text, images, pages, and theme themselves. Only site members can open the editor, enforced in the database.",
+    },
     tags: ["Next.js", "TypeScript", "Supabase"],
+    screenshots: [
+      { src: fledge_01, alt: "Visual editor" },
+      { src: fledge_02, alt: "Published client site" },
+      { src: fledge_03, alt: "Pages and settings" },
+    ],
     highlights: [
       "Visual editor so clients change text, images, pages, and theme without a developer",
       "Draft and publish with version history, restore, and undo",
@@ -301,6 +335,11 @@ export const data = [
     url: "https://sf.freddiemac.com",
     color: "#5c8a6e",
     labelColor: "#8bc4a0",
+    story: {
+      role: "Contract Web Platform Developer on the Drupal platform, June 2024 to September 2025.",
+      problem: "A large public site was moving off a legacy platform and had to keep running through the change.",
+      result: "The Drupal platform held 100% uptime. I rebuilt pages during the migration and reviewed pages before each go-live.",
+    },
     tags: ["Drupal", "PHP", "CI/CD"],
     screenshots: [
       { src: freddie_01, alt: "Homepage" },
@@ -311,8 +350,8 @@ export const data = [
     ],
     highlights: [
       "100% uptime on a mission-critical web ecosystem",
-      "Led platform migration from legacy systems",
-      "End-to-end Drupal content deployment pipeline",
+      "Rebuilt pages during the move off the legacy platform",
+      "Worked on the end-to-end Drupal content deployment pipeline with CI/CD",
     ],
     description:
       "Mission-critical web ecosystem with 100% uptime, platform migration, and end-to-end Drupal content deployment.",
@@ -327,6 +366,11 @@ export const data = [
     url: "https://www.ibm.com/support/pages/ibmsearch",
     color: "#4a6670",
     labelColor: "#6a9ae6",
+    story: {
+      role: "Contract Drupal Developer, May 2022 to May 2023, working in PHP on the support search.",
+      problem: "Support content in Drupal and the Enterprise Search index could drift apart, and users could not narrow their searches.",
+      result: "Added a Component parameter to Drupal Search, a diagnostic script that checks published content against the index, repush scripts, and regression tests.",
+    },
     tags: ["Drupal", "PHP", "Search"],
     screenshots: [
       { src: ibm_01, alt: "IBM Search" },
@@ -351,7 +395,6 @@ export const data = [
     category: "Civic Tech",
     image: civicshq,
     url: "https://civicshq.com",
-    github: "https://github.com/abryantdev/CivicsHQ",
     live: true,
     color: "#1a5c45",
     labelColor: "#2d8a66",
@@ -375,12 +418,18 @@ export const data = [
     id: 4,
     name: "Jasaron",
     slug: "jasaron",
+    status: "Client site, no longer live",
     shortCode: "JSRN",
     category: "Education",
     image: jasaron,
     live: false,
     color: "#e8a838",
     labelColor: "#ffd166",
+    story: {
+      role: "Senior Web Coordinator on a contract, May 2020 to June 2024.",
+      problem: "A small education business needed its website kept current and easier to use.",
+      result: "Kept the site updated for four years and made usability changes based on market research. The site is no longer live.",
+    },
     tags: ["HTML5", "CSS3", "UX"],
     screenshots: [
       { src: jasaron, alt: "Homepage" },

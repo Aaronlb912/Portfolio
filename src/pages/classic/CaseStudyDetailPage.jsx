@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { HiArrowNarrowRight, HiOutlineExternalLink } from "react-icons/hi";
+import { FaGithub } from "react-icons/fa";
 import { data } from "../../data/data.js";
 
 const CaseStudyDetailPage = () => {
   const { slug } = useParams();
   const project = data.find((item) => item.slug === slug);
   const [photoIndex, setPhotoIndex] = useState(0);
+
+  useEffect(() => {
+    if (!project) return undefined;
+    const previous = document.title;
+    document.title = `${project.name} case study - Aaron Bryant`;
+    return () => {
+      document.title = previous;
+    };
+  }, [project]);
 
   if (!project) {
     return <Navigate to="/case-studies" replace />;
@@ -53,7 +63,7 @@ const CaseStudyDetailPage = () => {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          {project.url ? (
+          {project.url && (
             <a
               href={project.url}
               target="_blank"
@@ -63,9 +73,21 @@ const CaseStudyDetailPage = () => {
               View live site
               <HiOutlineExternalLink />
             </a>
-          ) : (
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary gap-2"
+            >
+              <FaGithub />
+              View on GitHub
+            </a>
+          )}
+          {!project.url && !project.github && (
             <span className="inline-flex items-center rounded-md border border-[var(--color-rule)] px-4 py-2 text-sm font-medium text-[var(--color-muted)]">
-              Site offline
+              {project.status ?? "Site offline"}
             </span>
           )}
         </div>
@@ -114,6 +136,25 @@ const CaseStudyDetailPage = () => {
               </>
             )}
           </div>
+        )}
+
+        {project.story && (
+          <section className="mt-12 grid gap-6 border-t border-[var(--color-rule)] pt-8 sm:grid-cols-3">
+            {[
+              ["My role", project.story.role],
+              ["The problem", project.story.problem],
+              ["The result", project.story.result],
+            ].map(([label, text]) => (
+              <div key={label}>
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-accent)]">
+                  {label}
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-[var(--color-muted)]">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </section>
         )}
 
         {project.highlights?.length > 0 && (

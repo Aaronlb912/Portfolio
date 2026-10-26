@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CaseStudyCard = ({ project, compact = false, index = 0 }) => {
-  const hero = project.screenshots?.[0];
+  const hero =
+    project.screenshots?.[0] ??
+    (project.image ? { src: project.image, alt: `${project.name} preview` } : null);
 
   return (
     <Link

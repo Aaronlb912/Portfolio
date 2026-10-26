@@ -15,7 +15,7 @@ const ClassicHomePage = () => {
         <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              01 / Front-End Engineer
+              01 / Front-End and Drupal Developer
             </p>
             <h1 className="mt-4 text-5xl font-medium tracking-tight text-[var(--color-text)] sm:text-6xl lg:text-[4.75rem] lg:leading-[1.05]">
               Aaron Bryant
