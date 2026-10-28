@@ -20,6 +20,11 @@ import didi_03 from "../assets/screenshots/did-i/03-adhd.png";
 import didi_04 from "../assets/screenshots/did-i/04-no-nagging.png";
 import didi_05 from "../assets/screenshots/did-i/05-beta.png";
 import civichall from "../assets/civichall.webp";
+import civichall_01 from "../assets/screenshots/civichall/01-home.png";
+import civichall_02 from "../assets/screenshots/civichall/02-how-do-i.png";
+import civichall_03 from "../assets/screenshots/civichall/03-meetings.png";
+import civichall_04 from "../assets/screenshots/civichall/04-search.png";
+import civichall_05 from "../assets/screenshots/civichall/05-report-pothole.png";
 
 import anithrift from "../assets/anithrift.png";
 import anithrift_01 from "../assets/screenshots/anithrift/01-home.png";
@@ -287,6 +292,13 @@ export const data = [
       result: "A public Drupal template with six content types, a Mercury subtheme, search, and forms. A clerk installs it and renames it.",
     },
     tags: ["Drupal", "PHP", "Twig"],
+    screenshots: [
+      { src: civichall_01, alt: "Home page with clerk counter and alerts" },
+      { src: civichall_02, alt: "How do I listing" },
+      { src: civichall_03, alt: "Meetings listing" },
+      { src: civichall_04, alt: "Site search results" },
+      { src: civichall_05, alt: "Report a pothole form" },
+    ],
     highlights: [
       "Drupal CMS site template for city clerks and one-person IT shops",
       "Custom content types: How do I, Department, Official, Meeting, News, City alert",
