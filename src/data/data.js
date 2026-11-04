@@ -303,6 +303,7 @@ export const data = [
       "Drupal CMS site template for city clerks and one-person IT shops",
       "Custom content types: How do I, Department, Official, Meeting, News, City alert",
       "Mercury subtheme, search, contact and records request forms",
+      "civic_hall_meetings, a module on drupal.org that publishes meetings as a calendar feed",
     ],
     description:
       "Municipal site template on Drupal CMS with sample content for a fictional town, built so a clerk can install it and rename it.",
